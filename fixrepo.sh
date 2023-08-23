@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script is intended to fix any error that may have arisen with the kiwix library.
+# This script is intended to fix any error that may have arisen with the kiwix library on the base station.
 # Please see the readme on the GitHub page regarding this error for more details.
 
 echo "Whoops! Looks like your internet went dark. That wasn't supposed to happen!"
@@ -24,16 +24,7 @@ echo "Copying the new library..."
 sudo cp ~/library_zim.xml /home/gridbase/kiwixrepo/
 sleep 3
 
-# Ask if the user wants to remove downloaded files
-read -p "Would you like to remove the downloaded files? (y/n) " yn
-case $yn in
-    [yY] ) echo "Okay, removing them now."
-        rm -f ~/library_zim.xml ;;
-    [nN] ) echo "Suit yourself!" ;;
-    * ) echo "Invalid response." ;;
-esac
-sleep 1
-
+# Ask if the user wants to reboot
 echo "The system needs a reboot for changes to take effect."
 read -p "Would you like to reboot now? (y/n) " yn
 case $yn in
